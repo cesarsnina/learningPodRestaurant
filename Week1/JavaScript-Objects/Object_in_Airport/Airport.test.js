@@ -1,40 +1,54 @@
 const Airport = require('./Airport')
 const Passenger = require('./Passenger')
 const Plane = require('./Plane')
+const Bag = require('./Bag')
 
 describe('Airport class', () => {
 
     //variables for 
-    const Airport1 = new Airport('JFK')
+    const airport1 = new Airport('JFK')
     const plane5 = new Plane('Beta')
-    const plane6 = new Plane('sigmal')
     const ali = new Passenger('Ali')
+    const myBag = new Bag(30)
 
     
     
     test('Airport has a name', () => {
-        expect(Airport1.name).toBe('JFK')
+        expect(airport1.name).toBe('JFK')
     })
 
     test('Airport has planes', () => {
 
-        Airport1.addPlanes(plane5)
-        Airport1.addPlanes(plane6)
-        expect(Airport1.planes.length).toBe(2)
+        expect(Array.isArray(airport1.planes)).toBe(true)
     })
 
     test('Airport can add planes', () => {
 
-        Airport1.addPlanes('Delta')
-        expect(Airport1.planes.length).toBe(3)
+        airport1.addPlanes('Delta')
+        expect(airport1.planes.length).toBe(1)
     })
 
     test('Airport can have planes with Passengers with bags', () => {
 
-        Airport1.planes.addPassenger(ali)
-        expect(Airport1.planes.length).toBe(3)
-        expect(Airport1.planes.passenger.length).toBe(1)
-        expect(Airport1.planes.passenger.length).toBe(1)
+        airport1.addPlanes(plane5)
+        ali.addBag(myBag)
+        plane5.addPassenger(ali)
+        
+        expect(airport1.planes[0].passengers[0].bags[0].weight).toBe(30)
 
     })
+
+    test('fly plane from one airport to another', () => {
+        let myAirport = new Airport('sergeAirport')
+
+        myAirport.airports = [{name:'Boing', planes:['jfk', 'marchal']},
+        {name:'kenedy', planes:['alpha', 'beta']}
+        ]
+
+        myAirport.airports[0].planes.push(myAirport.airports[1].planes[0])
+
+        expect(myAirport.airports[0]).toEqual({name:'Boing', planes:['jfk', 'marchal', 'alpha']})
+        expect(myAirport.airports.length).toBeGreaterThan(1)
+    })
+
 })
