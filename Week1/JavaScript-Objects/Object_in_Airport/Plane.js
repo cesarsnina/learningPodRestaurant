@@ -4,6 +4,7 @@ class Plane{
         this.origin = ''
         this.destination = ''
         this.passengers = []
+        this.crew = ''
     }
 
     setOrigin(origin){
@@ -16,6 +17,10 @@ class Plane{
 
     addPassenger(passenger){
         this.passengers.push(passenger)
+    }
+
+    addCrew(crew){
+        this.crew = crew
     }
 }
 

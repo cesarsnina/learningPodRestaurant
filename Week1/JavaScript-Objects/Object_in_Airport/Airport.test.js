@@ -1,5 +1,5 @@
 const Airport = require('./Airport')
-const Passenger = require('./Passenger')
+const {Person} = require('./Person')
 const Plane = require('./Plane')
 const Bag = require('./Bag')
 
@@ -8,7 +8,7 @@ describe('Airport class', () => {
     //variables for 
     const airport1 = new Airport('JFK')
     const plane5 = new Plane('Beta')
-    const ali = new Passenger('Ali')
+    const ali = new Person('Ali')
     const myBag = new Bag(30)
 
     
@@ -24,15 +24,16 @@ describe('Airport class', () => {
 
     test('Airport can add planes', () => {
 
-        airport1.addPlanes('Delta')
+        airport1.addPlanes(plane5)
         expect(airport1.planes.length).toBe(1)
     })
 
     test('Airport can have planes with Passengers with bags', () => {
 
-        airport1.addPlanes(plane5)
         ali.addBag(myBag)
         plane5.addPassenger(ali)
+        airport1.addPlanes(plane5)
+
         
         expect(airport1.planes[0].passengers[0].bags[0].weight).toBe(30)
 

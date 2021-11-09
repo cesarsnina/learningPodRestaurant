@@ -1,10 +1,10 @@
 const Plane = require('./Plane')
-const Passenger = require('./Passenger')
+const {Person} = require('./Person')
 
 describe('Plane Class', () => {
 
-    //varible for Passenger and Plane
-    let Passenger3 = new Passenger('moanic')
+    //varible for Person and Plane
+    let person3 = new Person('moanic')
     const newPlane = new Plane('Delta')
 
     test('Plane has a name', () => {
@@ -25,8 +25,14 @@ describe('Plane Class', () => {
 
     })
 
-    test('Plan can add Passengers', () => {
-        newPlane.addPassenger(Passenger3)
+    test('Plane can add Passengers', () => {
+        newPlane.addPassenger(person3)
         expect(newPlane.passengers.length).toBe(1)
+    })
+
+    test('Plane has a crew', () => {
+         newPlane.crew = 'Avengers'
+         expect(newPlane.crew).toBeDefined()
+         expect(newPlane.crew).toBe('Avengers')
     })
 })
