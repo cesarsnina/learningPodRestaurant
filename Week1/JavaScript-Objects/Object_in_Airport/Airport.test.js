@@ -42,14 +42,17 @@ describe('Airport class', () => {
     test('fly plane from one airport to another', () => {
         let myAirport = new Airport('sergeAirport')
 
-        myAirport.airports = [{name:'Boing', planes:['jfk', 'marchal']},
-        {name:'kenedy', planes:['alpha', 'beta']}
+        myAirport.airports = [
+            {name:'Boing', planes:['jfk', 'marchal']},
+            {name:'kenedy', planes:['alpha', 'beta']}
         ]
 
         myAirport.airports[0].planes.push(myAirport.airports[1].planes[0])
 
         expect(myAirport.airports[0]).toEqual({name:'Boing', planes:['jfk', 'marchal', 'alpha']})
+
         expect(myAirport.airports.length).toBeGreaterThan(1)
     })
+
 
 })

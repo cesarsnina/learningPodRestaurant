@@ -3,10 +3,7 @@ class Airport{
     static airports = []
 
     static flyplane(){
-        // let planeToFly = Airport.airports[0].planes[0]
-        // let destination = Airport.airports[1].planes
-        // console.log(planeToFly)
-        // console.log(destination)
+        
         return Airport.airports.length > 0
 
     }
