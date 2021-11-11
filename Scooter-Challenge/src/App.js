@@ -5,18 +5,26 @@ class App{
         this.stations = []
     }
 
-    registerUser(fullName, email, password, accountNumber, routingNumber){
+    registerUser(fullName, age, email, password, accountNumber, routingNumber){
         let info = {
             fullName: fullName,
+            age: age,
             email: email,
             password: password,
             accountNumber: accountNumber,
             routingNumber: routingNumber
         }
 
-        this.users.push(info)
+        if(info.age > 18){
+            this.users.push(info)
+            console.log(`user ${info.fullName} has succesfully registered!!`)
 
-        console.log(`user ${info.fullName} has succesfully registered!!`)
+        }
+        else{
+            console.log(`SORRY!! user ${info.fullName} is Under 18 years!!`)
+        }
+
+
     }
     
     removeUser(name){
@@ -54,8 +62,10 @@ class App{
 }
 
 const newApp = new App('Electric Scooter Hire')
-newApp.registerUser('serge', 'serge@google.com', 'xxxxxx', 'hbdsiuiu77', 'dsbuvus8888')
-newApp.registerUser('titi', 'serge@yahoo.com', 'xxxxxx', 'hbdsiuiu77', 'dsbuvus8888')
+newApp.registerUser('serge',70, 'serge@google.com', 'xxxxxx', 'hbdsiuiu77', 'dsbuvus8888')
+newApp.registerUser('titi',20, 'serge@yahoo.com', 'xxxxxx', 'hbdsiuiu77', 'dsbuvus8888')
+newApp.registerUser('monic', 17, 'serge@yahoo.com', 'xxxxxx', 'hbdsiuiu77', 'dsbuvus8888')
+
 newApp.addStations('station1')
 newApp.addStations('station2')
 newApp.addStations('station3')
