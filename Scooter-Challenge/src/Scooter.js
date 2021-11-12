@@ -30,7 +30,7 @@ class Scooter_1 extends Scooter{
 }
 
 const newScooter = new Scooter_1('fx3556gh', '44456ff', 76)
-//newScooter.isBroken('Broken')
+newScooter.isBroken('Broken')
 console.log('scooter info', newScooter.getInfo())
 
 

@@ -21,7 +21,8 @@ describe('App class', () => {
 
     test('App can register(add) users', () => {
         const userInfo = {
-            fullName: 'Serge Nikiema', 
+            fullName: 'Serge Nikiema',
+            age: 70, 
             email: 'sergenikiema@noogler.com',
             password:'xxxxxxxx',
             accountNumber: 'ghdgv25572464g',

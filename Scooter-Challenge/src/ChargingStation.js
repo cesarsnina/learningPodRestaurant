@@ -26,7 +26,7 @@ class Station_1 extends ChargingStation{
 const newStation = new Station_1('station1', 'Bronx, NY 17735')
 newStation.addScooter('scooter1998')
 newStation.addScooter('scooter2021')
-//newStation.removeScooter('scooter2021')
+newStation.removeScooter('scooter2021')
 console.log('station object :', newStation)
 
 

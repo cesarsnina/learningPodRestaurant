@@ -15,13 +15,12 @@ class App{
             routingNumber: routingNumber
         }
 
-        if(info.age > 18){
-            this.users.push(info)
-            console.log(`user ${info.fullName} has succesfully registered!!`)
-
+        if(info.age < 18){
+            console.log(`SORRY!! user ${info.fullName} is Under 18 years!!`)
         }
         else{
-            console.log(`SORRY!! user ${info.fullName} is Under 18 years!!`)
+            this.users.push(info)
+            console.log(`user ${info.fullName} has succesfully registered!!`)
         }
 
 
@@ -69,10 +68,10 @@ newApp.registerUser('monic', 17, 'serge@yahoo.com', 'xxxxxx', 'hbdsiuiu77', 'dsb
 newApp.addStations('station1')
 newApp.addStations('station2')
 newApp.addStations('station3')
-//newApp.removeUser('serge')
+newApp.removeUser('serge')
 
 newApp.getStations()
-//console.log('App object', newApp.getUserInfo("serge"))
+console.log('App object', newApp.getUserInfo("serge"))
 console.log('App object', newApp)
 
 
