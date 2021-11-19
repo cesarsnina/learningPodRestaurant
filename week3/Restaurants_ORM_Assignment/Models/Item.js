@@ -20,16 +20,6 @@ Item.init({
     sequelize: db //let sequelize know where the table will be stored
 })
 
-//inserting rows
-// db.sync({force: true}).then(() => {
-
-//     Item.create({ name: 'Pret-a-porte', price: 60 }).then((insertItem) => {
-//         console.log(insertItem);
-//     })
-//     Item.create({ name: 'American Pancakes', price: 18 }).then((insertItem) => {
-//         console.log(insertItem.dataValues);
-//     })
-// });
 
 //export
 module.exports = {Item}

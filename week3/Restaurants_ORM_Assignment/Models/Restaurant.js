@@ -21,20 +21,6 @@ Restaurant.init({
     sequelize: db //let sequelize know where the table will be stored
 })
 
-
-
-//inserting rowsn
-// db.sync({force: true}).then(() => {
-
-//     Restaurant.create({ name: 'Bayroot', imagelink:'https://www.telegraph.co.uk' }).then(() => {
-//         console.log('row created');
-//     })
-//     Restaurant.create({ name: 'The Berkley', imagelink:'https://www.the-berkeley.co.uk' }).then(() => {
-//         console.log('row created');
-//     })
-// });
-
-
    
 
 
