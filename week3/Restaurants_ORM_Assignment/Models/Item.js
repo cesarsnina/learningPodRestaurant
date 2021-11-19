@@ -21,15 +21,15 @@ Item.init({
 })
 
 //inserting rows
-db.sync({force: true}).then(() => {
+// db.sync({force: true}).then(() => {
 
-    Item.create({ name: 'Pret-a-porte', price: 60 }).then(() => {
-        console.log('row created');
-    })
-    Item.create({ name: 'American Pancakes', price: 18 }).then(() => {
-        console.log('row created');
-    })
-});
+//     Item.create({ name: 'Pret-a-porte', price: 60 }).then((insertItem) => {
+//         console.log(insertItem);
+//     })
+//     Item.create({ name: 'American Pancakes', price: 18 }).then((insertItem) => {
+//         console.log(insertItem.dataValues);
+//     })
+// });
 
 //export
 module.exports = {Item}

@@ -18,15 +18,15 @@ Menu.init({
 
 
 //inserting rows
-db.sync({force: true}).then(() => {
+// db.sync({force: true}).then(() => {
 
-    Menu.create({ title: 'Afternoon tea'}).then(() => {
-        console.log('row created');
-    })
-    Menu.create({ title: 'breakfast Menu'}).then(() => {
-        console.log('row created');
-    })
-});
+//     Menu.create({ title: 'Afternoon tea'}).then((insertItem) => {
+//         console.log(insertItem.dataValues);
+//     })
+//     Menu.create({ title: 'breakfast Menu'}).then(() => {
+//         console.log('row created');
+//     })
+// });
 
 //export
 module.exports = {Menu}
