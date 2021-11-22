@@ -13,7 +13,9 @@ app.get('/now', (request, response) => {
 })
 
 app.get('/flipcoin', (request, response) => {
-    response.send('<p>heads</p>')
+    let data = ['head', 'tails'];
+    let result = data[Math.floor(Math.random()*data.length)]
+    response.send(result)
 })
 
 app.get('/restaurants', async (req, res) => {
