@@ -2,6 +2,12 @@
     "data": [
         {"name": "On the low By Burna Boy", "genre": "AfroBeats"},
         {"name": "crazy in love", "genre": "Dance floor"},
-        {"name": "Hello by Adele", "genre": "Ballad"}
+        {"name": "Hello by Adele", "genre": "Ballad"},
+        {"name": "Level Up By: Ciara", "genre": "RnB"},
+        {"name": "Con Altura By: J Balvin", "genre": "Reggaeton"},
+        {"name": "Yo x Ti, Tu x Mi By: Ozuna", "genre": "Reggaeton"},
+        {"name": "Yo Quiero Bailar By: Ivy Queen", "genre": "Reggaeton"},
+        {"name": "Hello By: Adele", "genre": "Ballad"},
+        {"name": "Chop Suey By: System of a Down", "genre": "Metal"}
     ]
 }
