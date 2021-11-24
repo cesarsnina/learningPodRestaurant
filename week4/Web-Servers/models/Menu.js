@@ -7,9 +7,7 @@ class Menu extends Model {
 
 
 Menu.init({
-    title: {
-        type: DataTypes.STRING
-    }
+    title: DataTypes.STRING,
 },
 {
     sequelize: db 
