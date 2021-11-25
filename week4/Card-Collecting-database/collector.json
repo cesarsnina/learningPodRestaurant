@@ -1,0 +1,5 @@
+{
+    "collectors": [
+        {"name": "serge", "budget": 2000}
+    ]
+}
