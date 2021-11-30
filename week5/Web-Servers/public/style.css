@@ -1,0 +1,25 @@
+body {
+    background-color: lightGreen;
+}
+body h1 {
+    text-align: center;
+}
+.restaurants-container {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin-top: 60px;
+    margin-left: 300px;
+}
+article img {
+    width: 200px;
+    height: 200px;
+}
+.item-img{
+    width: 400px;
+    height: 400px;
+    text-align: center;
+}
+article {
+    margin-right: 20px;
+}
