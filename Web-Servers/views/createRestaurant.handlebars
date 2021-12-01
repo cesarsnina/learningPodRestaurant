@@ -1,15 +1,21 @@
- <form action="/restaurants_create" method="post">
+ {{>header}}
 
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name"><br>
+ <div class="space">
+    <form action="/restaurants_create" method="post">
 
-    <br>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
 
-    <label for="image">Image:</label><br>
-    <input type="text" id="image" name="image"><br>
+        <br>
 
-    <br>
+        <label for="image">Image:</label><br>
+        <input type="text" id="image" name="image"><br>
 
-    <button type="submit">Submit</button>
+        <br>
 
-</form>
+        <button type="submit">Submit</button>
+
+    </form>
+ </div>
+
+{{>footer}}

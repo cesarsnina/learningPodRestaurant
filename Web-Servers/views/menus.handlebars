@@ -1,11 +1,19 @@
-<section>
-    <h2>{{menus.name}}'s menus:</h2>
-    {{#each menus.Menus}}
-        <article>
-            <h2>{{title}}</h2>
-                {{#each items}}
-                    <p>{{name}} ${{price}}</p>
-                {{/each}}
-        </article>
-    {{/each}}
-</section>
+{{>header}}
+
+<div>
+    <section>
+        <h1 class="menuName">{{menus.name}}'s menus:</h1>
+        {{#each menus.Menus}}
+            <article>
+                <h1 class="menuName">{{title}}</h1>
+                    <ul class="listOfItems">
+                        {{#each items}}
+                            <li>{{name}} ${{price}}</li>
+                        {{/each}}
+                    </ul>
+            </article>
+        {{/each}}
+    </section>
+</div>
+
+{{>footer}}
