@@ -1,7 +1,7 @@
 <section class="restaurants-container">
     {{#each restaurants}}
         <article >
-            <img src="{{this.image}}"/>
+            <a href="/restaurants/{{this.id}}"> <img src="{{this.image}}"/> </a>
             <h2>{{this.name}}</h2>
         </article>
     {{/each}}

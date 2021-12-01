@@ -4,7 +4,7 @@ const {engine, expressHandlebars} = require('express-handlebars')
 //const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 const port = 3000;
 const {sequelize} = require('./models');
-const {Restaurant, Menu, Item} = require('./models/index');
+const {Restaurant, Menu, Item, Service} = require('./models');
 const Seed = require('./seedDB');
 
 const app = express();
@@ -38,15 +38,23 @@ app.get('/restaurants', async (req, res) => {
     res.render('restaurants', { restaurants })
 })
 
-app.get('/menus', async (req, res) => {
-        let menus = await Menu.findAll()
-        res.render('menus', {menus})
-    })
 // this route returns HTML for a single restaurant
 app.get('/restaurants/:id', async (req, res) => {
     const restaurant = await Restaurant.findByPk(req.params.id)
     res.render('restaurant', { restaurant })
 })
+
+app.get('/restaurants/:id/menus', async (req, res) => {
+  const menus = await Restaurant.findByPk(req.params.id, {include: [{model: Menu,
+    through: {where: {RestaurantID: req.params.id}}}]})
+  // res.json(menus)
+  res.render('menus', { menus })
+})
+
+// app.get('/menus', async (req, res) => {
+//         let menus = await Menu.findAll()
+//         res.render('menus', {menus})
+// })
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:3000`)
