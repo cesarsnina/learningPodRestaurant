@@ -1,21 +1,21 @@
 const { db, DataTypes, Model } = require('../db');
-const { Restaurant } = require('./Restaurant');
 const { Menu } = require('./Menu');
+const { Item } = require('./Item');
 
-class Service extends Model {}
+class Meal extends Model {}
 
-Service.init({
-    RestaurantId: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: Restaurant,
-            key: 'id'
-        }
-    },
+Meal.init({
     MenuId: {
         type: DataTypes.INTEGER,
         references: {
             model: Menu,
+            key: 'id'
+        }
+    },
+    ItemId: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: Item,
             key: 'id'
         }
     }
@@ -24,4 +24,4 @@ Service.init({
     sequelize: db 
 })
 
-module.exports = { Service };
+module.exports = { Meal };

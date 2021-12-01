@@ -1,9 +1,11 @@
 <section>
-    <h2>Restaurant name: {{menus.name}}</h2>
+    <h2>{{menus.name}}'s menus:</h2>
     {{#each menus.Menus}}
         <article>
             <h2>{{title}}</h2>
+                {{#each items}}
+                    <p>{{name}} ${{price}}</p>
+                {{/each}}
         </article>
     {{/each}}
 </section>
-

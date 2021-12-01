@@ -38,23 +38,49 @@ app.get('/restaurants', async (req, res) => {
     res.render('restaurants', { restaurants })
 })
 
+app.post('/restaurants_create', async(req, res) => {
+    await Restaurant.create(req.body);
+    res.send('new restaurant created!')
+})
+
+app.post('/menu_create', async(req, res) => {
+  await Menu.create(req.body);
+  res.send('new menu created!')
+})
+
+app.get('/create_restaurant', (req, res) => {
+  res.render('createRestaurant')
+})
+
+app.get('/create_menu', (req, res) => {
+  res.render('createMenu')
+})
+
 // this route returns HTML for a single restaurant
 app.get('/restaurants/:id', async (req, res) => {
     const restaurant = await Restaurant.findByPk(req.params.id)
     res.render('restaurant', { restaurant })
 })
 
+// app.get('/restaurants/:id/menus', async (req, res) => {
+//   const menus = await Restaurant.findByPk(req.params.id, {include: [{model: Menu,
+//     through: {where: {RestaurantID: req.params.id}}}]})
+//   res.json(menus)
+//   // res.render('menus', { menus })
+// })
+
 app.get('/restaurants/:id/menus', async (req, res) => {
-  const menus = await Restaurant.findByPk(req.params.id, {include: [{model: Menu,
-    through: {where: {RestaurantID: req.params.id}}}]})
+  const menus = await Restaurant.findByPk(req.params.id,
+    {include: {all: true, nested: true}})
   // res.json(menus)
   res.render('menus', { menus })
 })
 
-// app.get('/menus', async (req, res) => {
-//         let menus = await Menu.findAll()
-//         res.render('menus', {menus})
-// })
+app.get('/menus', async (req, res) => {
+        let menus = await Menu.findAll()
+        // res.json(menus)
+        res.render('menus', {menus})
+})
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:3000`)
